@@ -40,7 +40,7 @@ class DataTransformation:
             num_pipeline= Pipeline(
                 steps=[
                 ("imputer",SimpleImputer(strategy="median")),
-                ("scaler",StandardScaler(with_mean=False))
+                ("scaler",StandardScaler())
 
                 ]
             )
@@ -80,6 +80,7 @@ class DataTransformation:
             test_df=pd.read_csv(test_path)
 
             logging.info("Read train and test data completed")
+
             logging.info("Obtaining preprocessing object")
 
             preprocessing_obj=self.get_data_transformer_object()
